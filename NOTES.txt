@@ -1,0 +1,5 @@
+May be adding M O sequences just as fields to print on the report
+
+Column "indicaciones" needs to appear at the top of the muestreos table in the report
+
+Add pieces, scrap, misc blank fields for the user to fill.

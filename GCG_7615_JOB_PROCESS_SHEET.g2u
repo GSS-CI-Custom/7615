@@ -1,0 +1,829 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmHeader..Create(BaseForm)
+Gui.frmHeader..Caption("Modelos Hoja de Procesos - Articulos")
+Gui.frmHeader..Size(946,409)
+Gui.frmHeader..MinX(0)
+Gui.frmHeader..MinY(0)
+Gui.frmHeader..Position(0,0)
+Gui.frmHeader..AlwaysOnTop(True)
+Gui.frmHeader..FontName("Tahoma")
+Gui.frmHeader..FontSize(8.25)
+Gui.frmHeader..ControlBox(True)
+Gui.frmHeader..MaxButton(True)
+Gui.frmHeader..MinButton(True)
+Gui.frmHeader..MousePointer(0)
+Gui.frmHeader..Moveable(True)
+Gui.frmHeader..Sizeable(True)
+Gui.frmHeader..ShowInTaskBar(True)
+Gui.frmHeader..TitleBar(True)
+Gui.frmHeader..Event(UnLoad,frmHeader_UnLoad)
+Gui.frmHeader.txtRouter.Create(TextBox,"",True,100,20,0,80,8,True,0,"Tahoma",8.25,,1)
+Gui.frmHeader.txtDesc.Create(TextBox,"",True,153,20,0,80,32,True,0,"Tahoma",8.25,,1)
+Gui.frmHeader.lblRouter.Create(Label,"Articulo:",True,40,13,0,18,13,True,0,"Tahoma",8.25,,0,0)
+Gui.frmHeader.lblRouter.BorderStyle(0)
+Gui.frmHeader.lblDesc.Create(Label,"Descripcion:",True,58,13,0,17,35,True,0,"Tahoma",8.25,,0,0)
+Gui.frmHeader.lblDesc.BorderStyle(0)
+Gui.frmHeader.cmdRouterBrowser.Create(Button)
+Gui.frmHeader.cmdRouterBrowser.Enabled(True)
+Gui.frmHeader.cmdRouterBrowser.Visible(True)
+Gui.frmHeader.cmdRouterBrowser.Zorder(0)
+Gui.frmHeader.cmdRouterBrowser.Size(20,20)
+Gui.frmHeader.cmdRouterBrowser.Position(184,8)
+Gui.frmHeader.cmdRouterBrowser.Caption("BROWSE")
+Gui.frmHeader.cmdRouterBrowser.FontName("Tahoma")
+Gui.frmHeader.cmdRouterBrowser.FontSize(8.25)
+Gui.frmHeader.cmdRouterBrowser.Event(Click,cmdRouterBrowser_Click)
+Gui.frmHeader.GSGCRouterOps.Create(GsGridControl)
+Gui.frmHeader.GSGCRouterOps.Enabled(True)
+Gui.frmHeader.GSGCRouterOps.Visible(True)
+Gui.frmHeader.GSGCRouterOps.Zorder(0)
+Gui.frmHeader.GSGCRouterOps.Size(933,314)
+Gui.frmHeader.GSGCRouterOps.Position(7,58)
+Gui.frmHeader.GSGCRouterOps.Anchor(15)
+Gui.frmHeader.GSGCRouterOps.Event(CellValueChanged,GSGCRouterOps_CellValueChanged)
+Gui.frmHeader.GSGCRouterOps.Event(RowCellClick,GSGCRouterOps_RowCellClick)
+Gui.frmLines..Create(BaseForm)
+Gui.frmLines..Caption("Modelos Hoja de Procesos - Muestreos")
+Gui.frmLines..Size(615,387)
+Gui.frmLines..MinX(0)
+Gui.frmLines..MinY(0)
+Gui.frmLines..Position(0,0)
+Gui.frmLines..AlwaysOnTop(False)
+Gui.frmLines..FontName("Tahoma")
+Gui.frmLines..FontSize(8.25)
+Gui.frmLines..ControlBox(True)
+Gui.frmLines..MaxButton(True)
+Gui.frmLines..MinButton(True)
+Gui.frmLines..MousePointer(0)
+Gui.frmLines..Moveable(True)
+Gui.frmLines..Sizeable(True)
+Gui.frmLines..ShowInTaskBar(True)
+Gui.frmLines..TitleBar(True)
+Gui.frmLines..Event(UnLoad,frmLines_UnLoad)
+Gui.frmLines.lblOperation.Create(Label,"Operacion:",True,53,13,0,24,40,True,0,"Tahoma",8.25,,0,0)
+Gui.frmLines.lblOperation.BorderStyle(0)
+Gui.frmLines.lblRouter.Create(Label,"Aritculo:",True,40,13,0,23,18,True,0,"Tahoma",8.25,,0,0)
+Gui.frmLines.lblRouter.BorderStyle(0)
+Gui.frmLines.txtRouter.Create(TextBox,"",True,100,20,0,85,15,True,0,"Tahoma",8.25,,1)
+Gui.frmLines.txtRouter.Locked(True)
+Gui.frmLines.txtRouterDesc.Create(TextBox,"",True,191,20,0,192,15,True,0,"Tahoma",8.25,,1)
+Gui.frmLines.txtRouterDesc.Locked(True)
+Gui.frmLines.txtOperation.Create(TextBox,"",True,100,20,0,85,37,True,0,"Tahoma",8.25,,1)
+Gui.frmLines.txtOperation.Locked(True)
+Gui.frmLines.txtOperationDesc.Create(TextBox,"",True,191,20,0,192,37,True,0,"Tahoma",8.25,,1)
+Gui.frmLines.txtOperationDesc.Locked(True)
+Gui.frmLines.GSGCOpSampleLines.Create(GsGridControl)
+Gui.frmLines.GSGCOpSampleLines.Enabled(True)
+Gui.frmLines.GSGCOpSampleLines.Visible(True)
+Gui.frmLines.GSGCOpSampleLines.Zorder(0)
+Gui.frmLines.GSGCOpSampleLines.Size(607,290)
+Gui.frmLines.GSGCOpSampleLines.Position(4,62)
+Gui.frmLines.GSGCOpSampleLines.Event(CellValueChanged,GSGCOpSampleLines_CellValueChanged)
+Gui.frmLines.GSGCOpSampleLines.Event(RowCellClick,GSGCOpSampleLines_RowCellClick)
+Gui.frmLines.GSGCOpSampleLines.Anchor(15)
+Gui.frmLines.cmdAdd.Create(Button)
+Gui.frmLines.cmdAdd.Enabled(True)
+Gui.frmLines.cmdAdd.Visible(True)
+Gui.frmLines.cmdAdd.Zorder(0)
+Gui.frmLines.cmdAdd.Size(75,20)
+Gui.frmLines.cmdAdd.Position(533,37)
+Gui.frmLines.cmdAdd.Caption("GUARDAR")
+Gui.frmLines.cmdAdd.FontName("Tahoma")
+Gui.frmLines.cmdAdd.FontSize(8.25)
+Gui.frmLines.cmdAdd.Event(Click,cmdSave)
+Gui.frmLines.cmdAdd.Anchor(9)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bSaveFromUnload.Declare(Boolean)
+V.Global.bFirstLaunch.Declare(Boolean)
+V.Global.bSaveFromUnload.Set(False)
+V.Global.bFirstLaunch.Set(True)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+
+	Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+	
+	F.Intrinsic.Control.CallSub(SetContextMenu)
+	
+	GUi.frmHeader..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.LoadData.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sSql.Declare(String)
+	
+	F.Intrinsic.Control.If(V.Global.bFirstLaunch, !=, True)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtRouterLines.Exists, =, True)
+		F.Data.DataTable.Close("dtRouterLines")
+	F.Intrinsic.Control.EndIf
+	 
+'	Capture all selected router's L sequences
+	F.Intrinsic.String.Build("select (ROUTER + LINE_ROUTER) DICTID, RTRIM(LINE_ROUTER) LINE_ROUTER, RTRIM(PART_WC_OUTSIDE) PART_WC_OUTSIDE, RTRIM(DESC_RT_LINE) DESC_RT_LINE, '' MUESTREOS, '' ADDBTN, '' INDICACIONES from V_ROUTER_LINE where ROUTER = '{0}' and LMO = 'L' order by LINE_ROUTER", V.Screen.frmHeader!txtRouter.Text, V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("dtRouterLines", "con", V.Local.sSql, True)
+
+'	F.Intrinsic.String.Build("select (ROUTER + LINE_ROUTER) DICTID, ('0' + LEFT(LINE_ROUTER,5)) LINE_ROUTER, RTRIM(PART_WC_OUTSIDE) PART_WC_OUTSIDE, RTRIM(DESC_RT_LINE) DESC_RT_LINE, '' MUESTREOS, '' ADDBTN, '' INDICACIONES from V_ROUTER_LINE where ROUTER = '{0}' and LMO = 'L'", V.Screen.frmHeader!txtRouter.Text, V.Local.sSql)
+'	F.Data.DataTable.CreateFromSQL("dtRouterLines", "con", V.Local.sSql, True)
+	
+	'Fill total records in existence in custom table for each ROUTER/SEQ combination
+	F.Data.Dictionary.CreateFromSQL("dictLines", "con", "select (ARTICULO + LINEA) DICTID, COUNT(LINEA) LINES from GCG_7615_MUESTREOS group by ARTICULO, LINEA")
+	F.Data.Dictionary.SetDefaultReturn("dictLines", "0")
+	F.Data.DataTable.FillFromDictionary("dtRouterLines", "dictLines", "DICTID", "MUESTREOS")
+	F.Data.Dictionary.Close("dictLines")
+	
+	'Fill notes for each ROUTER/SEQ record
+	F.Data.Dictionary.CreateFromSQL("dictNotes", "con", "select (ARTICULO + LINEA) DICTID, RTRIM(INDICACIONES) INDICACIONES from GCG_7615_ARTI_ENCAB")
+	F.Data.Dictionary.SetDefaultReturn("dictNotes", "")
+	F.Data.DataTable.FillFromDictionary("dtRouterLines", "dictNotes", "DICTID", "INDICACIONES")
+	F.Data.Dictionary.Close("dictNotes")
+
+	F.Intrinsic.Control.CallSub(FormatData)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadData.End
+
+Program.Sub.FormatData.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.iCount.Declare(Long)
+	V.Local.sFieldNames.Declare(String)
+
+	GUI.frmHeader.GSGCRouterOps.AddGridviewFromDatatable("gvRouterLines", "dtRouterLines")
+	
+	'Hide and suspend layout during load
+	GUI.frmHeader.GSGCRouterOps.Visible(False)
+	GUI.frmHeader.GSGCRouterOps.SuspendLayout()
+	
+	F.Intrinsic.String.Split(V.DataTable.dtRouterLines.FieldNames, "*!*", V.Local.sFieldNames)
+	
+	'Loop field names to set all identical column properties
+	F.Intrinsic.Control.For(V.Local.iCount, 0, V.Local.sFieldNames.UBound, 1)
+		GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", V.Local.sFieldNames(V.Local.iCount), "HeaderFontBold", True)
+		GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", V.Local.sFieldNames(V.Local.iCount), "ReadOnly", True)
+		GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", V.Local.sFieldNames(V.Local.iCount), "AllowEdit", False)
+		GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", V.Local.sFieldNames(V.Local.iCount), "AllowMove", False)
+		GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", V.Local.sFieldNames(V.Local.iCount), "AllowShowHide", False)
+		GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", V.Local.sFieldNames(V.Local.iCount), "AllowSort", False)
+		GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", V.Local.sFieldNames(V.Local.iCount), "AllowFilter", False)
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	
+	'Hide Uneeded column
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "DICTID", "Visible", False)
+	
+	'Set captions
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "LINE_ROUTER", "Caption", "Linea")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "PART_WC_OUTSIDE", "Caption", "Operacion")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "DESC_RT_LINE", "Caption", "Descripcion")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "MUESTREOS", "Caption", "Muestreos")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "INDICACIONES", "Caption", "Indicaciones")
+	
+	'Set edit propertties
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "INDICACIONES", "AllowEdit", True)
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "INDICACIONES", "ReadOnly", False)
+	
+	GUI.frmHeader.GSGCRouterOps.ColumnEdit("gvRouterLines", "ADDBTN", "EditorButton", "Agregar")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "ADDBTN", "ShowCaption", False)
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "ADDBTN", "CellBackColor", "LightGray")
+	
+	'Set alignment
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "LINE_ROUTER", "HeaderHAlignment", "Center")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "LINE_ROUTER", "CellHAlignment", "Center")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "MUESTREOS", "HeaderHAlignment", "Center")
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "MUESTREOS", "CellHAlignment", "Center")
+	
+	'Set widths
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "LINE_ROUTER", "Width", 95)
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "PART_WC_OUTSIDE", "Width", 155)
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "DESC_RT_LINE", "Width", 195)
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "MUESTREOS", "Width", 120)
+	GUI.frmHeader.GSGCRouterOps.SetColumnProperty("gvRouterLines", "ADDBTN", "MaxWidth", 68)
+
+	GUI.frmHeader.GSGCRouterOps.MainView("gvRouterLines")
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	'Resume visibility and layout
+	GUI.frmHeader.GSGCRouterOps.ResumeLayout()
+	GUI.frmHeader.GSGCRouterOps.Visible(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatData.End
+
+Program.Sub.cmdRouterBrowser_Click.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sSelection.Declare(String)
+	V.Local.sColumns.Declare(String)
+	V.Local.sWidths.Declare(String)
+	
+	'Set browser column titles and widths
+	V.Local.sColumns.Set("Articulo*!*Descripcion")
+	V.Local.sWidths.Set("150*!*400")
+	F.Intrinsic.String.Split(V.Local.sColumns, "*!*", V.Local.sColumns)
+	F.Intrinsic.String.Split(V.Local.sWidths, "*!*", V.Local.sWidths)
+	
+	'Launch browser
+	F.Intrinsic.UI.Browser("Articulos", "con", "Select ROUTER, DESCRIPTION_ROUTER from V_ROUTER_HEADER", V.Local.sColumns, V.Local.sWidths, 8000, 10000, V.Local.sSelection)
+	
+	'Check return and load data according selection
+	F.Intrinsic.Control.If(V.Local.sSelection, !=, "***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sSelection, "*!*", V.Local.sSelection)
+		GUI.frmHeader.txtRouter.Text(V.Local.sSelection(0))
+		GUI.frmHeader.txtDesc.Text(V.Local.sSelection(1))
+		F.Intrinsic.Control.CallSub(LoadData)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRouterBrowser_Click.End
+
+Program.Sub.LoadLineData.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sSql.Declare(String)
+	V.Local.iCount.Declare(Long)
+	V.Local.sNextLine.Declare(String)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtLines.Exists, =, False)
+		F.Data.Datatable.Create("dtLines", True)
+		F.Data.Datatable.AddColumn("dtLines", "DOWN", "String")
+		F.Data.Datatable.AddColumn("dtLines", "UP", "String")
+		F.Data.Datatable.AddColumn("dtLines", "ARTICULO", "String")
+		F.Data.Datatable.AddColumn("dtLines", "LINEA", "String")
+		F.Data.Datatable.AddColumn("dtLines", "MUESTREO_LINEA", "String")
+		F.Data.Datatable.AddColumn("dtLines", "MUESTREO_INDICACION", "String")
+		F.Data.Datatable.AddColumn("dtLines", "DEL", "String")
+	F.Intrinsic.Control.EndIf
+	
+	'Close table if already opened
+	F.Intrinsic.Control.If(V.DataTable.dtTemp.Exists)
+		F.Data.DataTable.Close("dtTemp")
+	F.Intrinsic.Control.EndIf
+	
+	'Get any existing lines for router/seq in GCG_7615_MUESTREOS
+	F.Intrinsic.String.Build("Select '' DOWN, ''UP, ARTICULO, LINEA, MUESTREO_LINEA, RTRIM(MUESTREO_INDICACION) MUESTREO_INDICACION, '' DEL from GCG_7615_MUESTREOS where ARTICULO = '{0}' and LINEA = '{1}' order by MUESTREO_LINEA", V.Screen.frmHeader!txtRouter.Text, V.Args.ROUTERSEQ, V.Local.sSql)
+	F.Data.DataTable.CreateFromSQL("dtTemp", "con", V.Local.sSql, True)
+	
+	F.Intrinsic.Control.BlockEvents()
+	'Refresh dtTemp data into main dtLines table
+	F.Data.Datatable.DeleteRow("dtLines", -1)
+	F.Data.DataTable.Merge("dtTemp", "dtLines", True, 1)
+	F.Data.DataTable.AcceptChanges("dtLines")
+	F.Intrinsic.Control.UnBlockEvents()
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadLineData.End
+
+Program.Sub.FormatLineData.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sNextLine.Declare(String)
+	
+	'Format data in grid
+	GUI.frmLines.GSGCOpSampleLines.AddGridviewFromDatatable("gvLines", "dtLines")
+	
+	'Hide all uneeded columns
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "ARTICULO", "Visible", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "Visible", False)
+	
+	'Set Captions
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "Caption", "Linea")
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "Caption", "Muestreo")
+	
+	'Set allow show/hide properties
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "AllowShowHide", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "AllowShowHide", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "AllowShowHide", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "ARTICULO", "AllowShowHide", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "AllowShowHide", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "AllowShowHide", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "AllowShowHide", False)
+	
+	'Set allow move properties
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "AllowMove", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "AllowMove", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "AllowMove", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "ARTICULO", "AllowMove", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "AllowMove", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "AllowMove", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "AllowMove", False)
+	
+	'Set allow sort properties
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "AllowSort", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "AllowSort", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "AllowSort", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "ARTICULO", "AllowSort", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "AllowSort", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "AllowSort", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "AllowSort", False)
+	
+	'Set allow filter properties
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "AllowFilter", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "AllowFilter", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "AllowFilter", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "ARTICULO", "AllowFilter", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "AllowFilter", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "AllowFilter", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "AllowFilter", False)
+	
+	'Set bold properties
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "HeaderFontBold", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "HeaderFontBold", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "HeaderFontBold", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "ARTICULO", "HeaderFontBold", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "HeaderFontBold", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "HeaderFontBold", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "HeaderFontBold", True)
+	
+	'Set buttons
+	GUI.frmLines.GSGCOpSampleLines.ColumnEdit("gvLines", "DOWN", "EditorButton", "-")
+	GUI.frmLines.GSGCOpSampleLines.ColumnEdit("gvLines", "UP", "EditorButton", "+")
+	GUI.frmLines.GSGCOpSampleLines.ColumnEdit("gvLines", "DEL", "EditorButton", "Eliminar")
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "ShowCaption", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "ShowCaption", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "ShowCaption", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "CellBackColor", "LightGray")
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "CellBackColor", "LightGray")
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "CellBackColor", "LightGray")
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "ReadOnly", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "AllowEdit", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "ReadOnly", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "AllowEdit", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "ReadOnly", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "AllowEdit", False)
+	
+	'Set edit properties
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "AllowEdit", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "AllowEdit", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "ReadOnly", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "ReadOnly", True)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "ReadOnly", False)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_INDICACION", "AllowEdit", True)
+	
+	'Set widths
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "MinWidth", 55)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "MUESTREO_LINEA", "MaxWidth", 55)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "MinWidth", 25)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "UP", "MaxWidth", 25)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "MinWidth", 25)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DOWN", "MaxWidth", 25)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "MinWidth", 60)
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "DEL", "MaxWidth", 60)
+	
+	'Set alignment
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "HeaderHAlignment", "Center")
+	GUI.frmLines.GSGCOpSampleLines.SetColumnProperty("gvLines", "LINEA", "CellHAlignment", "Center")
+	
+	'Set header details on form
+	GUI.frmLines.txtRouter.Text(V.Screen.frmHeader!txtRouter.Text)
+	GUI.frmLines.txtRouterDesc.Text(V.Screen.frmHeader!txtDesc.Text)
+	GUI.frmLines.txtOperation.Text(v.Args.OP)
+	GUI.frmLines.txtOperationDesc.Text(v.Args.OPDESC)
+	
+	'Add blank line for new record addition
+	F.Intrinsic.Math.Add(V.DataTable.dtLines.RowCount, 1, V.Local.sNextLine)
+	F.Intrinsic.String.LPad(V.Local.sNextLine, "0", 3, V.Local.sNextLine)
+	F.Intrinsic.Control.If(V.Local.sNextLine, <=, 6)
+		F.Data.DataTable.AddRow("dtLines", "ARTICULO", V.Screen.frmHeader!txtRouter.Text, "LINEA", V.Args.ROUTERSEQ, "MUESTREO_LINEA", V.Local.sNextLine)
+	F.Intrinsic.Control.EndIf
+	
+	
+	GUI.frmLines.GSGCOpSampleLines.MainView("gvLines")
+	
+	GUI.frmLines..Show
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatLineData.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sSerialize.Declare(String)
+	
+	'Serialize grid and save to registry
+	GUI.frmHeader.GSGCRouterOps.Serialize("gvRouterLines", V.Local.sSerialize)
+	
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvRouterLines",1000,7615,False,"Serialize",False,0,0,V.Ambient.Date,V.Ambient.Time,V.Local.sSerialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sSerialize.Declare(String)
+	
+	'Deserialize grid and set to grid if any
+	F.Global.Registry.ReadValue(V.Caller.User, V.Caller.CompanyCode, "gvRouterLines", 1000,7615,6, "", V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim, !=, "")
+		GUI.frmHeader.GSGCRouterOps.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.SetContextMenu.Start
+F.Intrinsic.Control.Try
+	
+	'Create and attach context menu to gvOrderLines grid
+	GUI.frmHeader..ContextMenuCreate("ContextMenu")
+	GUI.frmHeader.GSGCRouterOps.ContextMenuAttach("ContextMenu")
+	GUI.frmHeader..ContextMenuAddItem("ContextMenu", "Reset", 0, "Reorganizar Formato de Tabla")
+	GUI.frmHeader..ContextMenuSetItemEventHandler("ContextMenu", "Reset", "ResetFormatting")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenu.End
+
+Program.Sub.ResetFormatting.Start
+F.Intrinsic.Control.Try
+
+	'Clear serialization and reload grid
+	F.Global.Registry.AddValue(V.Caller.User, V.Caller.CompanyCode, "gvRouterLines", 1000, 7615, False, "Serialize", False, 0,-999.0,1/1/1980,12:00:00 AM,"")
+	V.Global.bFirstLaunch.Set(True)
+	F.Intrinsic.Control.CallSub(LoadData)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.ResetFormatting.End
+
+Program.Sub.Catching.Start
+V.Local.sError.Declare(String)
+
+F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}",V.Caller.ScriptFile,V.Ambient.NewLine,v.Args.sub,V.Args.errorno,V.args.errordesc,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError,"Unhandled Exception")
+
+F.Intrinsic.Control.If(V.ODBC.con.Exists)
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.End
+Program.Sub.Catching.End
+
+Program.Sub.frmHeader_UnLoad.Start
+F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.If(V.ODBC.con.Exists)
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.End
+Program.Sub.frmHeader_UnLoad.End
+
+Program.Sub.GSGCRouterOps_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sRouter.Declare(String)
+	V.Local.sLine.Declare(String)
+	V.Local.sOperation.Declare(String)
+	V.Local.sNotes.Declare(String)
+	V.Local.sSql.Declare(String)
+	V.Local.sRet.Declare(String)
+	V.Local.sTemp.Declare(String)
+
+	F.Intrinsic.Control.SelectCase(v.Args.Column)
+	
+		F.Intrinsic.Control.Case("INDICACIONES")
+			V.Local.sRouter.Set(V.Screen.frmHeader!txtRouter.Text)
+			GUI.frmHeader.GSGCRouterOps.GetCellValueByColumnName("gvRouterLines", "INDICACIONES", V.Args.RowIndex, V.Local.sNotes)
+			GUI.frmHeader.GSGCRouterOps.GetCellValueByColumnName("gvRouterLines", "LINE_ROUTER", V.Args.RowIndex, V.Local.sLine)
+			GUI.frmHeader.GSGCRouterOps.GetCellValueByColumnName("gvRouterLines", "PART_WC_OUTSIDE", V.Args.RowIndex, V.Local.sOperation)
+			
+'			'Format router sequence to conform with format used by barcode WO report (e.g. seq 003000 should be seq 000300)
+'			F.Intrinsic.String.Left(V.Local.sLine, 5, V.Local.sTemp)
+'			F.Intrinsic.String.Build("0{0}", V.Local.sTemp, V.Local.sTemp)
+			
+			'Check if router line record already exists
+			F.Intrinsic.String.Build("Select * from GCG_7615_ARTI_ENCAB where ARTICULO = '{0}' and LINEA = '{1}'", V.Local.sRouter, V.Local.sLine, V.Local.sSql)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+			
+			'Insert new record if not already present
+			F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, =, True)
+				F.Intrinsic.String.Build("Insert into GCG_7615_ARTI_ENCAB (ARTICULO, LINEA, OPERACION, INDICACIONES) values ('{0}', '{1}', '{2}', '{3}')", V.Local.sRouter, V.Local.sLine, V.Local.sOperation, V.Local.sNotes, V.Local.sSql)
+				F.ODBC.Connection!con.Execute(V.Local.sSql)
+								
+			'Update record if already present
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("Update GCG_7615_ARTI_ENCAB set INDICACIONES = '{0}' where ARTICULO = '{1}' and LINEA = '{2}'", V.Local.sNotes, V.Local.sRouter, V.Local.sLine, V.Local.sSql)
+				F.ODBC.Connection!con.Execute(V.Local.sSql)
+				
+			F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.GSGCRouterOps_CellValueChanged.End
+
+Program.Sub.GSGCRouterOps_RowCellClick.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sRouter.Declare(String)
+	V.Local.sRoutSeq.Declare(String)
+	V.Local.sOp.Declare(String)
+	V.Local.sOpDesc.Declare(String)
+	
+	F.Intrinsic.Control.BlockEvents()
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+	
+		F.Intrinsic.Control.Case("ADDBTN")
+			GUI.frmHeader.GSGCRouterOps.GetCellValueByColumnName("gvRouterLines", "LINE_ROUTER", V.Args.RowIndex, V.Local.sRoutSeq)
+			GUI.frmHeader.GSGCRouterOps.GetCellValueByColumnName("gvRouterLines", "PART_WC_OUTSIDE", V.Args.RowIndex, V.Local.sOp)
+			GUI.frmHeader.GSGCRouterOps.GetCellValueByColumnName("gvRouterLines", "DESC_RT_LINE", V.Args.RowIndex, V.Local.sOpDesc)
+			GUI.frmHeader..Enabled(False)
+			F.Intrinsic.Control.CallSub(LoadLineData, "ROUTERSEQ", V.Local.sRoutSeq, "OP", V.Local.sOp, "OPDESC", V.Local.sOpDesc)
+			F.Intrinsic.Control.CallSub(FormatLineData)
+			
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.GSGCRouterOps_RowCellClick.End
+
+Program.Sub.cmdAdd_Click.Start
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.GSGCOpSampleLines_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sRouter.Declare(String)
+	V.Local.sRouterSeq.Declare(String)
+	V.Local.sSampleLine.Declare(String)
+	V.Local.sSampleText.Declare(String)
+	V.Local.sSql.Declare(String)
+	V.Local.sRet.Declare(String)
+	V.Local.sNextLine.Declare(String)
+	V.Local.iCurrRow.Declare(String)
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		
+		F.Intrinsic.Control.Case("MUESTREO_INDICACION")
+			F.Intrinsic.Control.BlockEvents()
+
+			'If a the last row is editted add new row to table
+			F.Intrinsic.Math.Add(V.Args.RowIndex, 1, V.Local.iCurrRow)
+			F.Intrinsic.Control.If(V.Local.iCurrRow, >=, 6)
+				F.Intrinsic.Control.UnBlockEvents
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "MUESTREO_LINEA", V.Args.RowIndex, V.Local.sSampleLine)
+			
+			F.Intrinsic.Control.If(V.Local.iCurrRow, =, V.DataTable.dtLines.RowCount, AND, V.Local.sSampleLine, !=, "")
+				GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "ARTICULO", V.Args.RowIndex, V.Local.sRouter)
+				GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "LINEA", V.Args.RowIndex, V.Local.sRouterSeq)
+				F.Intrinsic.Math.Add(V.DataTable.dtLines.RowCount, 1, V.Local.sNextLine)
+				F.Intrinsic.String.LPad(V.Local.sNextLine, "0", 3, V.Local.sNextLine)
+				F.Data.DataTable.AddRow("dtLines", "ARTICULO", V.Screen.frmHeader!txtRouter.Text, "LINEA", V.Local.sRouterSeq, "MUESTREO_LINEA", V.Local.sNextLine)
+			
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.UnBlockEvents()
+			
+	F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.GSGCOpSampleLines_CellValueChanged.End
+
+Program.Sub.frmLines_UnLoad.Start
+F.Intrinsic.Control.Try
+	
+	'Save to db in case any changes were made
+	V.Global.bSaveFromUnload.Set(True)
+	F.Intrinsic.Control.CallSub(cmdSave)
+	GUI.frmLines..Visible(False)
+	F.Intrinsic.Control.CallSub(LoadData)
+	GUI.frmHeader..Enabled(True)
+	GUI.frmHeader..AlwaysOnTop(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.frmLines_UnLoad.End
+
+Program.Sub.GSGCOpSampleLines_RowCellClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sSelectedSampleLine.Declare("String")
+	V.Local.sPrevRowIndex.Declare("String")
+	V.Local.sNextRowIndex.Declare("String")
+	V.Local.sSql.Declare("String")
+	V.Local.sRouter.Declare("String")
+	V.Local.sRouterSeq.Declare("String")
+	V.Local.sTemp.Declare("String")
+	V.Local.sCurrNote.Declare("String")
+	V.Local.sNextNote.Declare("String")
+	V.Local.sPrevNote.Declare("String")
+	V.Local.sLastIndex.Declare("String")
+	V.Local.sNewLineNo.Declare("String")
+	V.Local.iCount.Declare("Long")
+	V.Local.sLine.Declare("String")
+	V.Local.sCurrRowCount.Declare("String")
+	V.Local.bCheck.Declare("Boolean")
+
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		
+		'Move line number down by one
+		F.Intrinsic.Control.Case("DOWN")
+			F.Intrinsic.Control.BlockEvents()
+			
+			F.Intrinsic.Control.If(V.Args.RowIndex, =, 5)
+				F.Intrinsic.Control.UnBlockEvents()
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.DataTable.dtLines.RowCount, !=, 6)
+				'If last row is clicked (-1 to account for blank editable row) do nothing
+				F.Intrinsic.Math.Sub(V.DataTable.dtLines.RowCount--, 1, V.Local.sLastIndex)
+				F.Intrinsic.Control.If(V.Args.RowIndex, =, V.Local.sLastIndex)
+					F.Intrinsic.Control.UnBlockEvents()
+					F.Intrinsic.Control.ExitSub
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			'Add 1 to selected row index to get next row
+			F.Intrinsic.Math.Add(V.Args.RowIndex, 1, V.Local.sNextRowIndex)
+			'Capture needed indexes
+			GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "MUESTREO_INDICACION", V.Args.RowIndex, V.Local.sCurrNote)
+			GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "MUESTREO_INDICACION", V.Local.sNextRowIndex, V.Local.sNextNote)
+			
+			'Swap line numbers on table
+			F.Data.DataTable.SetValue("dtLines", V.Local.sNextRowIndex, "MUESTREO_INDICACION", V.Local.sCurrNote)
+			F.Data.DataTable.SetValue("dtLines", V.Args.RowIndex, "MUESTREO_INDICACION", V.Local.sNextNote)
+			F.Intrinsic.Control.UnBlockEvents()
+			
+		'Move line number up by one
+		F.Intrinsic.Control.Case("UP")
+			F.Intrinsic.Control.BlockEvents()
+			
+			F.Intrinsic.Control.If(V.Args.RowIndex, !=, 5)
+				'If first row is clicked, do nothing
+				F.Intrinsic.Math.Sub(V.DataTable.dtLines.RowCount--, 1, V.Local.sLastIndex)
+				F.Intrinsic.Control.If(V.Args.RowIndex, =, 0, OR, V.Args.RowIndex, >, V.Local.sLastIndex)
+					F.Intrinsic.Control.UnBlockEvents
+					F.Intrinsic.Control.ExitSub
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			'Sub 1 from selected row index to get prvious row
+			F.Intrinsic.Math.Sub(V.Args.RowIndex, 1, V.Local.sPrevRowIndex)
+			'Capture needed indexes
+			GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "MUESTREO_INDICACION", V.Args.RowIndex, V.Local.sCurrNote)
+			GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "MUESTREO_INDICACION", V.Local.sPrevRowIndex, V.Local.sPrevNote)
+			
+			'Swap line numbers on table
+			F.Data.DataTable.SetValue("dtLines", V.Local.sPrevRowIndex, "MUESTREO_INDICACION", V.Local.sCurrNote)
+			F.Data.DataTable.SetValue("dtLines", V.Args.RowIndex, "MUESTREO_INDICACION", V.Local.sPrevNote)
+			F.Intrinsic.Control.UnBlockEvents()
+		
+		'Delete row and update line numbers below deleted row
+		F.Intrinsic.Control.Case("DEL")
+			F.Intrinsic.Control.BlockEvents()
+
+			'Set flag if row count is 6 and last line is not blank
+			F.Intrinsic.Control.If(V.DataTable.dtLines.RowCount, =, 6)
+				F.Intrinsic.Control.If(V.DataTable.dtLines(5).MUESTREO_INDICACION!FieldValTrim, !=, "")
+					V.Local.bCheck.Set(True)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			'If last row is selected (last row in table is always blank for adding new records) and last row is not 6, do nothing
+			F.Intrinsic.Control.If(V.Args.RowIndex, =, V.DataTable.dtLines.RowCount--, AND, V.DataTable.dtLines.RowCount, !=, 6)
+				F.Intrinsic.Control.UnBlockEvents
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		
+			'Create temp table
+			F.Data.DataTable.DeleteRow("dtLines", V.Args.RowIndex)
+			F.Data.DataTable.AcceptChanges("dtLines")
+			
+			'Update line numbers
+			F.Intrinsic.Control.For(V.Local.iCount, 0, V.DataTable.dtLines.RowCount--, 1)
+				F.Intrinsic.Math.Add(V.Local.iCount, 1, V.Local.sLine)
+				F.Intrinsic.String.LPad(V.Local.sLine, "0", 3, V.Local.sLine)
+				F.Data.DataTable.SetValue("dtLines", V.Local.iCount, "MUESTREO_LINEA", V.Local.sLine)
+			F.Intrinsic.Control.Next(V.Local.iCount)
+		
+			'If last line (line no 6) was deleted or table contained 6 records before deletion add blank row
+			F.Intrinsic.Control.If(V.Args.RowIndex, =, 5, OR, V.Local.bCheck, =, True)
+				GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "ARTICULO", 1, V.Local.sRouter)
+				GUI.frmLines.GSGCOpSampleLines.GetCellValueByColumnName("gvLines", "LINEA", 1, V.Local.sRouterSeq)
+				F.Data.DataTable.AddRow("dtLines", "ARTICULO", V.Screen.frmHeader!txtRouter.Text, "LINEA", V.Local.sRouterSeq, "MUESTREO_LINEA", "006")
+			F.Intrinsic.Control.EndIf
+			
+			'Reset bcheck
+			V.Local.bCheck.Set(False)
+
+			F.Intrinsic.Control.UnBlockEvents()
+			
+	F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.GSGCOpSampleLines_RowCellClick.End
+
+Program.Sub.cmdSave.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.iCount.Declare(Long)
+	V.Local.sLine.Declare(String)
+	V.Local.sSql.Declare(String)
+	V.Local.sTemp.Declare(String)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtLines.Exists, =, False)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'Ensure tables\views are closed if opened already
+	F.Intrinsic.Control.If(V.DataTable.dtSave.Exists, =, True)
+		F.Data.DataTable.Close("dtSave")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.DataView.dtLines!dvLines.Exists, =, True)
+		F.Data.DataView.Close("dtLines", "dvLines")
+	F.Intrinsic.Control.EndIf
+	
+	
+	'Create table to save to db
+	F.Data.DataView.Create("dtLines", "dvLines")
+	F.Data.DataView.ToDataTable("dtLines", "dvLines", "dtSave")
+	F.Data.DataTable.RemoveColumn("dtSave", "UP")
+	F.Data.DataTable.RemoveColumn("dtSave", "DOWN")
+	F.Data.DataTable.RemoveColumn("dtSave", "DEL")
+	
+	'Last row will alway be blank for new record input, remove before saving
+	F.Intrinsic.Control.If(V.DataTable.dtLines.RowCount, >, 1, AND, V.DataTable.dtLines.RowCount, <, 6)
+		F.Data.DataTable.DeleteRow("dtSave", V.DataTable.dtLines.RowCount--)
+	F.Intrinsic.Control.EndIf
+
+	'Delete all lines for Router/Seq combination in case there were deletions made to the list
+	F.Intrinsic.String.Build("delete from GCG_7615_MUESTREOS where ARTICULO = '{0}' and LINEA = '{1}'", V.DataTable.dtSave(0).ARTICULO!FieldValTrim, V.DataTable.dtSave(0).LINEA!FieldValTrim, V.Local.sSql)
+	F.ODBC.Connection!con.Execute(V.Local.sSql)
+
+	'BarCode WO report 1811 which will be using this data load router sequences by trimming trimming the left most digit and adding a 0 to the left. Formatting the router sequences to match the report's format and adding to a separate column in custom table.
+
+'	F.Data.DataTable.AddColumn("dtSave", "RT_SEQ_REPORT", "String")
+'	F.Intrinsic.Control.If(V.DataTable.dtSave.RowCount, >, 0)
+'		F.Intrinsic.String.Left(V.DataTable.dtSave(0).LINEA!FieldValTrim, 5, V.Local.sTemp)
+'		F.Intrinsic.String.Build("0{0}", V.Local.sTemp, V.Local.sTemp)
+'		F.Data.DataTable.SetValue("dtSave", -1, "RT_SEQ_REPORT", V.Local.sTemp)
+'	F.Intrinsic.Control.EndIf
+
+
+	F.Intrinsic.Control.If(V.DataTable.dtSave.RowCount, =, 1, AND, V.DataTable.dtSave(0).MUESTREO_INDICACION!FieldValTrim, =, "")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'Save table to DB is any lines exists
+	F.Intrinsic.Control.If(V.DataTable.dtSave.RowCount, >, 0)
+		F.Data.DataTable.SaveToDB("dtSave", "con", "GCG_7615_MUESTREOS", "ARTICULO*!*LINEA*!*MUESTREO_LINEA", 256)
+	F.Intrinsic.Control.EndIf
+	
+'	F.Data.DataView.Close("dtLines", "dvLines")
+'	F.Data.DataTable.Close("dtSave")
+
+	'Display message if save was not called from form unload
+	F.Intrinsic.Control.If(V.Global.bSaveFromUnload, =, False)
+		F.Intrinsic.UI.Msgbox("Muestreos salvados", "")
+	F.Intrinsic.Control.EndIf
+	
+	'Set from unload flag to default
+	V.Global.bSaveFromUnload.Set(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8965.27978$}$1
+${$6$}$atudon$}$20240813132237428$}$wHlNQNSPD/BybNtaCJPwGHNwUyiDpx8wyqZGVIddMmS1SobtFuri/jZlPbzf3peTOXwxjAju6rQ=
+Program.Sub.Comments.End

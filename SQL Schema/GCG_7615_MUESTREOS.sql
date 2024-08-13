@@ -1,0 +1,12 @@
+-- Database: GLOBALTST Metadata version: 2 Exported: Jul 31, 2024
+-- Begin Tables
+SET LEGACYTYPESALLOWED = ON;
+-- Begin Multi-Line Statement
+CREATE TABLE "GCG_7615_MUESTREOS" USING 'GCG_7615_MUESTREOS.mkd' PAGESIZE=4096 (
+ "ARTICULO" CHAR(20),
+ "LINEA" CHAR(6),
+ "MUESTREO_LINEA" CHAR(3),
+ "MUESTREO_INDICACION" CHAR(300) );
+-- End Multi-Line Statement
+SET LEGACYTYPESALLOWED = OFF;
+-- End Tables

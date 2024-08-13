@@ -1,0 +1,12 @@
+-- Database: GLOBALTST Metadata version: 2 Exported: Jul 31, 2024
+-- Begin Tables
+SET LEGACYTYPESALLOWED = ON;
+-- Begin Multi-Line Statement
+CREATE TABLE "GCG_7615_ARTI_ENCAB" USING 'GCG_7615_ARTI_ENCAB.mkd' PAGESIZE=4096 (
+ "ARTICULO" CHAR(20),
+ "LINEA" CHAR(6),
+ "OPERACION" CHAR(20),
+ "INDICACIONES" CHAR(300) );
+-- End Multi-Line Statement
+SET LEGACYTYPESALLOWED = OFF;
+-- End Tables
