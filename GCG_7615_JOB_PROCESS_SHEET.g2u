@@ -149,6 +149,7 @@ F.Intrinsic.Control.Try
 	F.Data.DataTable.FillFromDictionary("dtRouterLines", "dictNotes", "DICTID", "INDICACIONES")
 	F.Data.Dictionary.Close("dictNotes")
 
+	V.Global.bFirstLaunch.Set(False)
 	F.Intrinsic.Control.CallSub(FormatData)
 
 F.Intrinsic.Control.Catch
@@ -238,7 +239,7 @@ F.Intrinsic.Control.Try
 	F.Intrinsic.String.Split(V.Local.sWidths, "*!*", V.Local.sWidths)
 	
 	'Launch browser
-	F.Intrinsic.UI.Browser("Articulos", "con", "Select ROUTER, DESCRIPTION_ROUTER from V_ROUTER_HEADER", V.Local.sColumns, V.Local.sWidths, 8000, 10000, V.Local.sSelection)
+	F.Intrinsic.UI.Browser("Articulos", "con", "Select ROUTER, DESCRIPTION_ROUTER from V_ROUTER_HEADER", V.Local.sColumns, V.Local.sWidths, 9000, 8000, V.Local.sSelection)
 	
 	'Check return and load data according selection
 	F.Intrinsic.Control.If(V.Local.sSelection, !=, "***CANCEL***")
@@ -825,5 +826,5 @@ Program.Sub.cmdSave.End
 
 Program.Sub.Comments.Start
 ${$5$}$20.1.8965.27978$}$1
-${$6$}$atudon$}$20240813132237428$}$wHlNQNSPD/BybNtaCJPwGHNwUyiDpx8wyqZGVIddMmS1SobtFuri/jZlPbzf3peTOXwxjAju6rQ=
+${$6$}$atudon$}$20240813140700829$}$wHlNQNSPD/BybNtaCJPwGHNwUyiDpx8wyqZGVIddMmTBjOxJknCyH/ICyqJSEe3Bm2GlzOHFcWg=
 Program.Sub.Comments.End
